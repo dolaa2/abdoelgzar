@@ -1,0 +1,756 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>موقع كورسات تعليمية | مشروع تعليمي معد ل د/فتحيه فهمي</title>
+    <meta name="description" content="منصة كورسات احترافية - مشروع تعليمي معد ل د/فتحيه فهمي - عبد الفتاح محمود الجزار" />
+    
+    <!-- Google Fonts: Cairo -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS (CDN) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        darkMode: 'class',
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ['Cairo', 'sans-serif'],
+            },
+            colors: {
+              primary: {
+                50: '#eff6ff', 100: '#dbeafe', 200: '#bfdbfe', 300: '#93c5fd',
+                400: '#60a5fa', 500: '#3b82f6', 600: '#2563eb', 700: '#1d4ed8',
+                800: '#1e40af', 900: '#1e3a8a', 950: '#172554',
+              },
+              secondary: {
+                50: '#f5f3ff', 100: '#ede9fe', 200: '#ddd6fe', 300: '#c4b5fd',
+                400: '#a78bfa', 500: '#8b5cf6', 600: '#7c3aed', 700: '#6d28d9',
+                800: '#5b21b6', 900: '#4c1d95',
+              }
+            },
+            boxShadow: {
+                'glow': '0 0 20px rgba(59, 130, 246, 0.5)',
+                'card': '0 10px 30px -5px rgba(0, 0, 0, 0.1)',
+            }
+          }
+        }
+      }
+    </script>
+    
+    <!-- Icons Library -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    
+    <!-- Custom CSS -->
+
+<link rel="stylesheet" href="/index.css">
+<script type="importmap">
+{
+  "imports": {
+    "react": "https://aistudiocdn.com/react@^19.2.1",
+    "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.1/",
+    "react/": "https://aistudiocdn.com/react@^19.2.1/",
+    "lucide-react": "https://aistudiocdn.com/lucide-react@^0.555.0",
+    "vite": "https://aistudiocdn.com/vite@^7.2.6",
+    "@vitejs/plugin-react": "https://aistudiocdn.com/@vitejs/plugin-react@^5.1.1"
+  }
+}
+</script>
+  <script type="module" crossorigin src="/assets/index-Ba0hqZsB.js"></script>
+  <link rel="stylesheet" crossorigin href="/assets/index-DLBcD4vG.css">
+</head>
+<body class="bg-gray-50 text-gray-900 dark:bg-slate-950 dark:text-white transition-colors duration-500 overflow-x-hidden selection:bg-primary-500 selection:text-white">
+
+    <!-- Splash Screen (شاشة البداية) -->
+    <div id="splash-screen" class="fixed inset-0 z-[100] flex flex-col items-center justify-center bg-slate-950 overflow-hidden">
+        <!-- خلفية متحركة -->
+        <div class="absolute top-0 left-0 w-full h-full opacity-30 pointer-events-none">
+             <div class="absolute top-1/4 left-1/4 w-96 h-96 bg-primary-600 rounded-full mix-blend-multiply filter blur-[100px] animate-blob"></div>
+             <div class="absolute bottom-1/4 right-1/4 w-96 h-96 bg-secondary-600 rounded-full mix-blend-multiply filter blur-[100px] animate-blob animation-delay-2000"></div>
+        </div>
+
+        <div class="relative z-10 text-center space-y-8">
+            <div class="flex justify-center mb-6">
+                <div class="relative group">
+                    <div class="absolute inset-0 bg-blue-500 blur-2xl opacity-40 rounded-full group-hover:opacity-60 transition-opacity duration-500"></div>
+                    <div class="relative p-6 bg-white/5 border border-white/10 rounded-full backdrop-blur-md shadow-2xl">
+                        <i data-lucide="sparkles" class="w-16 h-16 text-yellow-400 animate-pulse"></i>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="space-y-4">
+                <h1 class="text-4xl md:text-6xl font-black tracking-tight text-white mb-2 drop-shadow-lg">
+                    موقع كورسات تعليمية
+                </h1>
+                <p class="text-xl text-primary-200 font-light tracking-wide">
+                    مشروع تعليمي معد ل د/فتحيه فهمي - كلية تربية نوعية
+                </p>
+            </div>
+    
+            <div class="mt-12 p-8 bg-white/5 rounded-3xl border border-white/10 backdrop-blur-md max-w-lg mx-auto transform transition-all duration-500 hover:scale-105 hover:bg-white/10 shadow-2xl">
+                <div class="flex items-center gap-3 justify-center mb-4 text-primary-300">
+                    <i data-lucide="graduation-cap"></i>
+                    <span class="text-sm font-bold tracking-wider uppercase">إعداد وتطوير</span>
+                </div>
+                <h2 class="text-3xl font-bold mb-2 text-white">عبد الفتاح محمود الجزار</h2>
+                <div class="mt-4 inline-flex items-center gap-2 px-5 py-1.5 rounded-full bg-primary-600/20 text-primary-300 text-sm font-bold border border-primary-500/30">
+                    الفرقة الرابعة
+                </div>
+            </div>
+            
+            <!-- مؤشر التحميل -->
+            <div class="mt-8 flex justify-center">
+                <div class="flex space-x-2 space-x-reverse">
+                    <div class="w-3 h-3 bg-white/50 rounded-full animate-bounce"></div>
+                    <div class="w-3 h-3 bg-white/50 rounded-full animate-bounce delay-100"></div>
+                    <div class="w-3 h-3 bg-white/50 rounded-full animate-bounce delay-200"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Content Wrapper -->
+    <div id="main-content" class="opacity-0 flex flex-col min-h-screen">
+        
+        <!-- Header -->
+        <header class="sticky top-0 z-40 w-full backdrop-blur-xl bg-white/80 dark:bg-slate-900/80 border-b border-gray-200 dark:border-gray-800 transition-all duration-300 supports-[backdrop-filter]:bg-white/60">
+            <div class="container mx-auto px-4 h-20 flex items-center justify-between">
+                <!-- Logo -->
+                <button id="logo-btn" class="group flex items-center gap-3 hover:opacity-80 transition-opacity focus:outline-none">
+                    <div class="bg-gradient-to-tr from-primary-600 to-secondary-500 p-2.5 rounded-xl shadow-lg group-hover:shadow-primary-500/50 transition-shadow duration-300">
+                        <i data-lucide="sparkles" class="text-white w-6 h-6"></i>
+                    </div>
+                    <div class="flex flex-col items-start">
+                        <h1 data-i18n="platform_name" class="text-xl font-bold text-gray-900 dark:text-white leading-tight">
+                            منصة التعليم
+                        </h1>
+                        <span class="text-[9px] text-primary-600 dark:text-primary-400 font-bold tracking-wide">
+                            <span data-i18n="project_subtitle">مشروع تعليمي معد ل د/فتحيه فهمي</span>
+                        </span>
+                    </div>
+                </button>
+                
+                <nav class="hidden md:flex items-center gap-6 font-bold text-sm">
+                    <a id="nav-home" href="#" data-nav="home" data-i18n="nav_home" class="text-gray-700 dark:text-gray-200 hover:text-primary-600 transition-colors">الرئيسية</a>
+                    <a id="nav-courses" href="#" data-scroll="courses" data-i18n="nav_courses" class="text-gray-700 dark:text-gray-200 hover:text-primary-600 transition-colors">المسارات التعليمية</a>
+                    <a id="nav-video" href="#" data-nav="video" data-i18n="nav_video" class="text-gray-700 dark:text-gray-200 hover:text-primary-600 transition-colors">الفيديو</a>
+                    <a id="nav-teachers" href="#" data-nav="teachers" data-i18n="nav_teachers" class="text-gray-700 dark:text-gray-200 hover:text-primary-600 transition-colors">المعلمون</a>
+                    <a id="nav-about" href="#" data-modal="about" data-i18n="nav_about" class="text-gray-700 dark:text-gray-200 hover:text-primary-600 transition-colors">عن الطالب</a>
+                    <a id="nav-contact" href="#" data-modal="contact" data-i18n="nav_contact" class="text-gray-700 dark:text-gray-200 hover:text-primary-600 transition-colors">اتصل بنا</a>
+                </nav>
+        
+                <!-- Actions -->
+                <div class="flex items-center gap-3 md:gap-4">
+                    <button id="theme-toggle" class="p-2.5 rounded-full bg-gray-100 dark:bg-slate-800 hover:bg-gray-200 dark:hover:bg-slate-700 transition-all duration-300 focus:outline-none border border-transparent dark:border-slate-700 shadow-sm group">
+                        <span id="theme-icon" class="group-hover:scale-110 block transition-transform">
+                            <!-- Icons injected via JS -->
+                        </span>
+                    </button>
+                    <button id="lang-toggle" class="px-3 py-2 rounded-full bg-gray-100 dark:bg-slate-800 hover:bg-gray-200 dark:hover:bg-slate-700 transition-all duration-300 focus:outline-none border border-transparent dark:border-slate-700 shadow-sm font-bold text-xs flex items-center gap-2">
+                        <i data-lucide="globe" class="w-4 h-4"></i>
+                        <span id="lang-label">AR</span>
+                    </button>
+        
+                    <button id="btn-login" class="hidden sm:flex items-center gap-2 px-6 py-2.5 bg-gradient-to-r from-primary-600 to-primary-500 hover:from-primary-700 hover:to-primary-600 text-white rounded-xl font-bold transition-all shadow-lg shadow-primary-500/30 hover:shadow-primary-500/50 hover:-translate-y-0.5 active:scale-95">
+                        <i data-lucide="laptop" class="w-4 h-4"></i>
+                        <span>دخول الطالب</span>
+                    </button>
+                </div>
+            </div>
+        </header>
+
+        <!-- Views Container -->
+        <main class="flex-grow relative">
+            <!-- Centered Navigation Buttons -->
+            <nav id="center-nav" aria-label="Main navigation" class="reveal-on-scroll sticky top-16 z-30 flex justify-center">
+                <div class="inline-flex items-center gap-3 bg-white/70 dark:bg-slate-800/70 backdrop-blur-md border border-gray-200 dark:border-slate-700 rounded-full px-3 py-2 shadow-lg">
+                    <button id="center-home" data-nav="home" class="nav-btn inline-flex items-center gap-2 px-4 py-2 rounded-full text-sm font-bold text-gray-800 dark:text-gray-200 hover:text-primary-600 dark:hover:text-primary-400 transition-all hover:-translate-y-0.5 focus:outline-none focus:ring-2 focus:ring-primary-500" aria-label="Home" tabindex="0">
+                        <i data-lucide="home" class="w-4 h-4"></i>
+                        <span data-i18n="nav_home">الرئيسية</span>
+                    </button>
+                    <button id="center-courses" data-scroll="courses" class="nav-btn inline-flex items-center gap-2 px-4 py-2 rounded-full text-sm font-bold text-gray-800 dark:text-gray-200 hover:text-primary-600 dark:hover:text-primary-400 transition-all hover:-translate-y-0.5 focus:outline-none focus:ring-2 focus:ring-primary-500" aria-label="Courses" tabindex="0">
+                        <i data-lucide="book-open" class="w-4 h-4"></i>
+                        <span data-i18n="nav_courses">المسارات التعليمية</span>
+                    </button>
+                    <button id="center-teachers" data-nav="teachers" class="nav-btn inline-flex items-center gap-2 px-4 py-2 rounded-full text-sm font-bold text-gray-800 dark:text-gray-200 hover:text-primary-600 dark:hover:text-primary-400 transition-all hover:-translate-y-0.5 focus:outline-none focus:ring-2 focus:ring-primary-500" aria-label="Teachers" tabindex="0">
+                        <i data-lucide="users" class="w-4 h-4"></i>
+                        <span data-i18n="nav_teachers">المعلمون</span>
+                    </button>
+                    <button id="center-about" data-modal="about" class="nav-btn inline-flex items-center gap-2 px-4 py-2 rounded-full text-sm font-bold text-gray-800 dark:text-gray-200 hover:text-primary-600 dark:hover:text-primary-400 transition-all hover:-translate-y-0.5 focus:outline-none focus:ring-2 focus:ring-primary-500" aria-label="About" tabindex="0">
+                        <i data-lucide="info" class="w-4 h-4"></i>
+                        <span data-i18n="nav_about">عن الطالب</span>
+                    </button>
+                    <button id="center-contact" data-modal="contact" class="nav-btn inline-flex items-center gap-2 px-4 py-2 rounded-full text-sm font-bold text-gray-800 dark:text-gray-200 hover:text-primary-600 dark:hover:text-primary-400 transition-all hover:-translate-y-0.5 focus:outline-none focus:ring-2 focus:ring-primary-500" aria-label="Contact" tabindex="0">
+                        <i data-lucide="mail" class="w-4 h-4"></i>
+                        <span data-i18n="nav_contact">اتصل بنا</span>
+                    </button>
+                </div>
+            </nav>
+            
+            <!-- HOME VIEW -->
+            <div id="home-view" class="block transform transition-transform duration-500">
+                <!-- Hero Section -->
+                <section class="relative overflow-hidden pt-12 pb-20 lg:pt-24 lg:pb-32">
+                    <!-- خلفية جمالية -->
+                    <div class="absolute top-0 left-1/2 -translate-x-1/2 w-full h-full z-0 pointer-events-none opacity-40 dark:opacity-20">
+                        <div class="absolute top-20 right-10 w-[35rem] h-[35rem] bg-primary-400 rounded-full mix-blend-multiply filter blur-[90px] animate-blob"></div>
+                        <div class="absolute top-40 left-10 w-[35rem] h-[35rem] bg-secondary-400 rounded-full mix-blend-multiply filter blur-[90px] animate-blob animation-delay-2000"></div>
+                        <div class="absolute -bottom-8 left-1/2 w-[35rem] h-[35rem] bg-pink-300 rounded-full mix-blend-multiply filter blur-[90px] animate-blob animation-delay-4000"></div>
+                    </div>
+            
+                    <div class="container mx-auto px-4 relative z-10">
+                        <div class="flex flex-col lg:flex-row items-center gap-12 lg:gap-20">
+                            <!-- النص -->
+                            <div class="lg:w-1/2 text-center lg:text-right space-y-8 reveal-on-scroll">
+                                <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/50 dark:bg-slate-800/50 backdrop-blur-md border border-primary-100 dark:border-primary-900 text-primary-600 dark:text-primary-300 text-sm font-bold shadow-sm mb-2 hover:scale-105 transition-transform cursor-default">
+                                    <span class="relative flex h-2.5 w-2.5">
+                                        <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary-400 opacity-75"></span>
+                                        <span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-primary-500"></span>
+                                    </span>
+                                    مشروع تعليمي معد ل د/فتحيه فهمي
+                                </div>
+            
+                                <h1 class="text-4xl lg:text-7xl font-extrabold text-gray-900 dark:text-white leading-[1.15] tracking-tight text-balance">
+                                    تعلم بذكاء.. <br />
+                                    <span class="text-transparent bg-clip-text bg-gradient-to-r from-primary-600 via-secondary-500 to-primary-600 animate-gradient bg-[length:200%_auto]">
+                                        للمستقبل الرقمي
+                                    </span>
+                                </h1>
+            
+                                <p class="text-lg md:text-xl text-gray-600 dark:text-gray-300 leading-relaxed max-w-2xl mx-auto lg:mx-0 font-medium">
+                                    منصة متكاملة توفر محتوى تعليمي أكاديمي وتفاعلي، مصممة بأحدث تقنيات الويب لخدمة طلاب كلية التربية النوعية.
+                                </p>
+            
+                                <!-- بطاقة الطالب المصغرة -->
+                                <div class="glass-card p-5 rounded-2xl inline-flex items-center gap-4 transform hover:scale-105 transition-transform duration-300 cursor-default shadow-card">
+                                    <div class="w-12 h-12 rounded-full bg-gradient-to-br from-gray-200 to-gray-300 dark:from-gray-700 dark:to-gray-800 flex items-center justify-center">
+                                        <i data-lucide="user" class="w-6 h-6 text-gray-600 dark:text-gray-300"></i>
+                                    </div>
+                                    <div class="text-right">
+                                        <div class="text-xs text-gray-500 dark:text-gray-400 mb-0.5 font-bold uppercase tracking-wider">إعداد وتطوير</div>
+                                        <div class="font-bold text-gray-900 dark:text-white text-lg">عبد الفتاح محمود الجزار</div>
+                                    </div>
+                                </div>
+            
+                                <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 pt-4">
+                                    <button id="btn-browse-courses" class="w-full sm:w-auto px-8 py-4 bg-primary-600 hover:bg-primary-700 text-white rounded-2xl font-bold shadow-xl shadow-primary-600/20 hover:shadow-primary-600/40 transition-all hover:-translate-y-1 flex items-center justify-center gap-2 group relative overflow-hidden">
+                                        <div class="absolute inset-0 bg-white/20 translate-y-full group-hover:translate-y-0 transition-transform duration-300"></div>
+                                    <span class="relative" data-i18n="browse_courses">تصفح الكورسات</span>
+                                        <i data-lucide="arrow-left" class="w-5 h-5 group-hover:-translate-x-1 transition-transform relative"></i>
+                                    </button>
+                                    <button id="btn-intro-video" class="w-full sm:w-auto px-8 py-4 bg-white dark:bg-slate-800 text-gray-700 dark:text-white border border-gray-200 dark:border-slate-700 hover:bg-gray-50 dark:hover:bg-slate-700 rounded-2xl font-bold transition-all flex items-center justify-center gap-2 hover:shadow-lg hover:-translate-y-1">
+                                        <i data-lucide="play-circle" class="w-5 h-5 text-gray-400 group-hover:text-primary-500 transition-colors"></i>
+                                        <span data-i18n="intro_video">فيديو تعريفي</span>
+                                    </button>
+                                </div>
+                            </div>
+            
+                            <!-- العنصر العائم ثلاثي الأبعاد -->
+                            <div class="lg:w-1/2 w-full flex justify-center lg:justify-end reveal-on-scroll delay-200">
+                                <div class="relative w-full max-w-md animate-float">
+                                    <!-- Glows -->
+                                    <div class="absolute -top-10 -right-10 w-32 h-32 bg-yellow-400 rounded-full opacity-20 blur-3xl"></div>
+                                    <div class="absolute -bottom-10 -left-10 w-40 h-40 bg-primary-600 rounded-full opacity-20 blur-3xl"></div>
+            
+                                    <!-- Main Card -->
+                                    <div class="glass-card rounded-[2.5rem] p-8 shadow-2xl transform rotate-3 hover:rotate-0 transition-all duration-500 border-t border-white/50 dark:border-white/10">
+                                        <div class="flex items-center justify-between mb-8">
+                                            <span class="bg-green-100/80 text-green-700 dark:bg-green-500/20 dark:text-green-300 px-4 py-1.5 rounded-full text-xs font-bold shadow-sm backdrop-blur-sm">مسار مميز</span>
+                                            <div class="flex gap-1">
+                                                <i data-lucide="star" class="w-5 h-5 text-yellow-400 fill-current drop-shadow-sm"></i>
+                                                <i data-lucide="star" class="w-5 h-5 text-yellow-400 fill-current drop-shadow-sm"></i>
+                                                <i data-lucide="star" class="w-5 h-5 text-yellow-400 fill-current drop-shadow-sm"></i>
+                                                <i data-lucide="star" class="w-5 h-5 text-yellow-400 fill-current drop-shadow-sm"></i>
+                                                <i data-lucide="star" class="w-5 h-5 text-yellow-400 fill-current drop-shadow-sm"></i>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="w-24 h-24 bg-gradient-to-br from-primary-100 to-primary-50 dark:from-primary-900/40 dark:to-slate-800 rounded-3xl flex items-center justify-center mb-6 shadow-inner ring-4 ring-white/20 dark:ring-white/5">
+                                            <i data-lucide="cpu" class="w-12 h-12 text-primary-600 dark:text-primary-400"></i>
+                                        </div>
+            
+                                        <h3 class="text-3xl font-bold text-gray-900 dark:text-white mb-3">تكنولوجيا التعليم</h3>
+                                        <p class="text-gray-500 dark:text-gray-400 text-base mb-8 leading-relaxed font-medium">
+                                            اكتشف كيف يمكن للتقنية أن تغير وجه التعليم وتخلق فرصاً جديدة للتعلم والتطوير باستخدام أدوات الذكاء الاصطناعي.
+                                        </p>
+            
+                                        <div class="space-y-4 mb-8">
+                                            <div class="flex items-center gap-4 text-sm text-gray-700 dark:text-gray-200 bg-white/50 dark:bg-slate-700/30 p-4 rounded-2xl border border-gray-100 dark:border-slate-700 transition-colors hover:bg-white dark:hover:bg-slate-700/50">
+                                                <div class="p-2.5 bg-secondary-100 dark:bg-secondary-900/50 rounded-xl">
+                                                    <i data-lucide="code" class="w-5 h-5 text-secondary-600 dark:text-secondary-400"></i>
+                                                </div>
+                                                <span class="font-bold">تصميم تعليمي وتطوير ويب</span>
+                                            </div>
+                                            <div class="flex items-center gap-4 text-sm text-gray-700 dark:text-gray-200 bg-white/50 dark:bg-slate-700/30 p-4 rounded-2xl border border-gray-100 dark:border-slate-700 transition-colors hover:bg-white dark:hover:bg-slate-700/50">
+                                                <div class="p-2.5 bg-blue-100 dark:bg-blue-900/50 rounded-xl">
+                                                    <i data-lucide="layout" class="w-5 h-5 text-blue-600 dark:text-blue-400"></i>
+                                                </div>
+                                                <span class="font-bold">وسائط متعددة تفاعلية</span>
+                                            </div>
+                                        </div>
+            
+                                        <div class="flex flex-wrap gap-2 pt-2 border-t border-gray-100 dark:border-slate-700">
+                                            <span class="px-3 py-1.5 rounded-lg bg-gray-100 dark:bg-slate-700 text-xs text-gray-600 dark:text-gray-300 font-bold font-mono">EdTech</span>
+                                            <span class="px-3 py-1.5 rounded-lg bg-gray-100 dark:bg-slate-700 text-xs text-gray-600 dark:text-gray-300 font-bold font-mono">AI</span>
+                                            <span class="px-3 py-1.5 rounded-lg bg-primary-50 dark:bg-primary-900/30 text-xs text-primary-700 dark:text-primary-300 font-bold font-mono border border-primary-100 dark:border-primary-800">Innovation</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Courses Section -->
+                <section id="courses-section" class="py-24 bg-gray-50/50 dark:bg-slate-900/50 relative">
+                    <div class="container mx-auto px-4 relative z-10">
+                        <div class="text-center max-w-3xl mx-auto mb-16 reveal-on-scroll">
+                            <h2 class="text-3xl lg:text-5xl font-bold text-gray-900 dark:text-white mb-6">
+                                مسارات التعلم <span class="text-primary-600 relative inline-block">الأكثر طلباً <svg class="absolute w-full h-3 -bottom-1 right-0 text-primary-200 dark:text-primary-800 -z-10" viewBox="0 0 100 10" preserveAspectRatio="none"><path d="M0 5 Q 50 10 100 5" stroke="currentColor" stroke-width="8" fill="none"/></svg></span>
+                            </h2>
+                            <p class="text-gray-600 dark:text-gray-400 text-lg">
+                                مجموعة مختارة من المسارات التعليمية التي تم إعدادها لتناسب سوق العمل ومتطلبات التخرج.
+                            </p>
+                        </div>
+            
+                        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
+                            <!-- Track Card 1 -->
+                            <div class="reveal-on-scroll group bg-white dark:bg-slate-800 rounded-3xl border border-gray-200 dark:border-slate-700 hover:border-primary-500 dark:hover:border-primary-500 shadow-sm hover:shadow-2xl transition-all duration-500 flex flex-col overflow-hidden hover:-translate-y-2">
+                                <div class="p-8 flex-1">
+                                    <div class="w-16 h-16 rounded-2xl bg-primary-50 dark:bg-primary-900/20 text-primary-600 dark:text-primary-400 flex items-center justify-center mb-6 transition-transform duration-500 group-hover:scale-110 group-hover:rotate-6 shadow-sm">
+                                        <i data-lucide="code" class="w-8 h-8"></i>
+                                    </div>
+                                    <div class="flex items-center gap-2 mb-4">
+                                        <span class="px-2.5 py-1 rounded-md text-[10px] font-bold uppercase tracking-wider bg-green-100 text-green-700 dark:bg-green-500/20 dark:text-green-400">مبتدئ</span>
+                                        <div class="h-1 w-1 rounded-full bg-gray-300 dark:bg-gray-600"></div>
+                                        <span class="text-gray-500 dark:text-gray-400 text-xs font-bold">24 ساعة</span>
+                                    </div>
+                                    <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-3 group-hover:text-primary-600 dark:group-hover:text-primary-400 transition-colors">برمجة الويب المتكاملة</h3>
+                                    <p class="text-gray-600 dark:text-gray-400 text-sm leading-relaxed mb-6">تعلم أساسيات HTML5, CSS3, و JavaScript لبناء واجهات عصرية.</p>
+                                </div>
+                                <div class="px-8 py-5 bg-gray-50 dark:bg-slate-900/30 border-t border-gray-100 dark:border-slate-700 flex items-center justify-between group-hover:bg-primary-50/30 dark:group-hover:bg-primary-900/10 transition-colors">
+                                    <div class="flex -space-x-2 space-x-reverse">
+                                         <div class="w-8 h-8 rounded-full bg-slate-200 border-2 border-white dark:border-slate-800"></div>
+                                         <div class="w-8 h-8 rounded-full bg-slate-300 border-2 border-white dark:border-slate-800"></div>
+                                    </div>
+                                    <button data-navigate="video" class="text-sm font-bold text-primary-600 hover:text-primary-700 flex items-center gap-1">
+                                        التفاصيل <i data-lucide="chevron-left" class="w-4 h-4 group-hover/btn:-translate-x-1 transition-transform"></i>
+                                    </button>
+                                </div>
+                            </div>
+
+                             <!-- Track Card 2 -->
+                             <div class="reveal-on-scroll group bg-white dark:bg-slate-800 rounded-3xl border border-gray-200 dark:border-slate-700 hover:border-secondary-500 dark:hover:border-secondary-500 shadow-sm hover:shadow-2xl transition-all duration-500 flex flex-col overflow-hidden hover:-translate-y-2 delay-100">
+                                <div class="p-8 flex-1">
+                                    <div class="w-16 h-16 rounded-2xl bg-secondary-50 dark:bg-secondary-900/20 text-secondary-600 dark:text-secondary-400 flex items-center justify-center mb-6 transition-transform duration-500 group-hover:scale-110 group-hover:rotate-6 shadow-sm">
+                                        <i data-lucide="brain" class="w-8 h-8"></i>
+                                    </div>
+                                    <div class="flex items-center gap-2 mb-4">
+                                        <span class="px-2.5 py-1 rounded-md text-[10px] font-bold uppercase tracking-wider bg-yellow-100 text-yellow-700 dark:bg-yellow-500/20 dark:text-yellow-400">متوسط</span>
+                                        <div class="h-1 w-1 rounded-full bg-gray-300 dark:bg-gray-600"></div>
+                                        <span class="text-gray-500 dark:text-gray-400 text-xs font-bold">32 ساعة</span>
+                                    </div>
+                                    <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-3 group-hover:text-secondary-600 dark:group-hover:text-secondary-400 transition-colors">الذكاء الاصطناعي AI</h3>
+                                    <p class="text-gray-600 dark:text-gray-400 text-sm leading-relaxed mb-6">دمج نماذج الذكاء الاصطناعي وتعلم الآلة في التطبيقات التعليمية.</p>
+                                </div>
+                                <div class="px-8 py-5 bg-gray-50 dark:bg-slate-900/30 border-t border-gray-100 dark:border-slate-700 flex items-center justify-between group-hover:bg-secondary-50/30 dark:group-hover:bg-secondary-900/10 transition-colors">
+                                    <div class="flex -space-x-2 space-x-reverse">
+                                         <div class="w-8 h-8 rounded-full bg-slate-200 border-2 border-white dark:border-slate-800"></div>
+                                         <div class="w-8 h-8 rounded-full bg-slate-300 border-2 border-white dark:border-slate-800"></div>
+                                         <div class="w-8 h-8 rounded-full bg-slate-400 border-2 border-white dark:border-slate-800"></div>
+                                    </div>
+                                    <button data-navigate="video" class="text-sm font-bold text-secondary-600 hover:text-secondary-700 flex items-center gap-1">
+                                        التفاصيل <i data-lucide="chevron-left" class="w-4 h-4 group-hover/btn:-translate-x-1 transition-transform"></i>
+                                    </button>
+                                </div>
+                            </div>
+
+                             <!-- Track Card 3 -->
+                             <div class="reveal-on-scroll group bg-white dark:bg-slate-800 rounded-3xl border border-gray-200 dark:border-slate-700 hover:border-pink-500 dark:hover:border-pink-500 shadow-sm hover:shadow-2xl transition-all duration-500 flex flex-col overflow-hidden hover:-translate-y-2 delay-200">
+                                <div class="p-8 flex-1">
+                                    <div class="w-16 h-16 rounded-2xl bg-pink-50 dark:bg-pink-900/20 text-pink-600 dark:text-pink-400 flex items-center justify-center mb-6 transition-transform duration-500 group-hover:scale-110 group-hover:rotate-6 shadow-sm">
+                                        <i data-lucide="sparkles" class="w-8 h-8"></i>
+                                    </div>
+                                    <div class="flex items-center gap-2 mb-4">
+                                        <span class="px-2.5 py-1 rounded-md text-[10px] font-bold uppercase tracking-wider bg-red-100 text-red-700 dark:bg-red-500/20 dark:text-red-400">متقدم</span>
+                                        <div class="h-1 w-1 rounded-full bg-gray-300 dark:bg-gray-600"></div>
+                                        <span class="text-gray-500 dark:text-gray-400 text-xs font-bold">18 ساعة</span>
+                                    </div>
+                                    <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-3 group-hover:text-pink-600 dark:group-hover:text-pink-400 transition-colors">هندسة الأوامر (Prompt)</h3>
+                                    <p class="text-gray-600 dark:text-gray-400 text-sm leading-relaxed mb-6">احترف التعامل مع ChatGPT و Gemini للحصول على نتائج دقيقة.</p>
+                                </div>
+                                <div class="px-8 py-5 bg-gray-50 dark:bg-slate-900/30 border-t border-gray-100 dark:border-slate-700 flex items-center justify-between group-hover:bg-pink-50/30 dark:group-hover:bg-pink-900/10 transition-colors">
+                                    <div class="flex -space-x-2 space-x-reverse">
+                                         <div class="w-8 h-8 rounded-full bg-slate-200 border-2 border-white dark:border-slate-800"></div>
+                                    </div>
+                                    <button data-navigate="video" class="text-sm font-bold text-pink-600 hover:text-pink-700 flex items-center gap-1">
+                                        التفاصيل <i data-lucide="chevron-left" class="w-4 h-4 group-hover/btn:-translate-x-1 transition-transform"></i>
+                                    </button>
+                                </div>
+                            </div>
+
+                             <!-- Track Card 4 -->
+                             <div class="reveal-on-scroll group bg-white dark:bg-slate-800 rounded-3xl border border-gray-200 dark:border-slate-700 hover:border-blue-500 dark:hover:border-blue-500 shadow-sm hover:shadow-2xl transition-all duration-500 flex flex-col overflow-hidden hover:-translate-y-2 delay-300">
+                                <div class="p-8 flex-1">
+                                    <div class="w-16 h-16 rounded-2xl bg-blue-50 dark:bg-blue-900/20 text-blue-600 dark:text-blue-400 flex items-center justify-center mb-6 transition-transform duration-500 group-hover:scale-110 group-hover:rotate-6 shadow-sm">
+                                        <i data-lucide="database" class="w-8 h-8"></i>
+                                    </div>
+                                    <div class="flex items-center gap-2 mb-4">
+                                        <span class="px-2.5 py-1 rounded-md text-[10px] font-bold uppercase tracking-wider bg-yellow-100 text-yellow-700 dark:bg-yellow-500/20 dark:text-yellow-400">متوسط</span>
+                                        <div class="h-1 w-1 rounded-full bg-gray-300 dark:bg-gray-600"></div>
+                                        <span class="text-gray-500 dark:text-gray-400 text-xs font-bold">28 ساعة</span>
+                                    </div>
+                                    <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-3 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">قواعد البيانات Backend</h3>
+                                    <p class="text-gray-600 dark:text-gray-400 text-sm leading-relaxed mb-6">بناء هيكلة البيانات وربط الخوادم بالواجهة الأمامية.</p>
+                                </div>
+                                <div class="px-8 py-5 bg-gray-50 dark:bg-slate-900/30 border-t border-gray-100 dark:border-slate-700 flex items-center justify-between group-hover:bg-blue-50/30 dark:group-hover:bg-blue-900/10 transition-colors">
+                                    <div class="flex -space-x-2 space-x-reverse">
+                                         <div class="w-8 h-8 rounded-full bg-slate-200 border-2 border-white dark:border-slate-800"></div>
+                                         <div class="w-8 h-8 rounded-full bg-slate-300 border-2 border-white dark:border-slate-800"></div>
+                                    </div>
+                                    <button data-navigate="video" class="text-sm font-bold text-blue-600 hover:text-blue-700 flex items-center gap-1">
+                                        التفاصيل <i data-lucide="chevron-left" class="w-4 h-4 group-hover/btn:-translate-x-1 transition-transform"></i>
+                                    </button>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </section>
+            </div>
+
+            <!-- VIDEO VIEW (Hidden by default) -->
+            <div id="video-view" class="hidden opacity-0 transform translate-y-4 transition-all duration-500">
+                <section class="py-12 bg-gray-50 dark:bg-slate-900 min-h-[80vh]">
+                    <div class="container mx-auto px-4">
+                        <!-- Breadcrumb / Back -->
+                        <button id="btn-back-home" class="flex items-center gap-2 text-primary-600 dark:text-primary-400 hover:text-primary-700 font-bold mb-8 transition-colors group px-4 py-2 rounded-lg hover:bg-primary-50 dark:hover:bg-primary-900/20 w-fit">
+                            <i data-lucide="arrow-right" class="w-5 h-5 group-hover:-translate-x-1 transition-transform"></i>
+                            <span data-i18n="back_home">العودة للرئيسية</span>
+                        </button>
+            
+                        <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+                            <!-- Main Video Area -->
+                            <div class="lg:col-span-2 space-y-6">
+                                
+                                <!-- Video Player Placeholder -->
+                                <div class="relative aspect-video rounded-3xl overflow-hidden shadow-2xl group cursor-pointer bg-slate-950 border border-gray-800 ring-4 ring-gray-100 dark:ring-slate-800">
+                                    <img 
+                                        src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20width='1740'%20height='980'%3E%3Crect%20width='100%25'%20height='100%25'%20fill='%231e293b'/%3E%3Ctext%20x='50%25'%20y='50%25'%20fill='%23ffffff'%20font-size='48'%20text-anchor='middle'%20dominant-baseline='middle'%3EVideo%20Placeholder%3C/text%3E%3C/svg%3E" 
+                                        alt="Course Thumbnail" 
+                                        class="w-full h-full object-cover opacity-60 group-hover:opacity-40 transition-opacity duration-500 scale-100 group-hover:scale-105"
+                                    />
+                                    <div class="absolute inset-0 flex items-center justify-center">
+                                        <div class="w-24 h-24 bg-primary-600/90 rounded-full flex items-center justify-center pl-2 shadow-[0_0_50px_rgba(37,99,235,0.6)] group-hover:scale-110 transition-transform duration-300 backdrop-blur-md border border-white/20">
+                                            <i data-lucide="play" class="w-10 h-10 text-white fill-current"></i>
+                                        </div>
+                                    </div>
+                                    
+                                    <!-- UI Overlay -->
+                                    <div class="absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-black/90 via-black/50 to-transparent">
+                                        <div class="h-1.5 bg-gray-700 rounded-full mb-4 overflow-hidden cursor-pointer group/progress">
+                                            <div class="h-full w-1/3 bg-red-600 rounded-full relative">
+                                                <div class="absolute right-0 top-1/2 -translate-y-1/2 w-4 h-4 bg-red-500 rounded-full shadow opacity-0 group-hover/progress:opacity-100 transition-opacity"></div>
+                                            </div>
+                                        </div>
+                                        <div class="flex justify-between text-white text-sm font-medium">
+                                            <div class="flex gap-2 items-center">
+                                                <span>15:30</span>
+                                                <span class="text-gray-400">/</span>
+                                                <span class="text-gray-400">45:00</span>
+                                            </div>
+                                            <div class="flex gap-4">
+                                                <i data-lucide="volume-2" class="w-5 h-5 cursor-pointer hover:text-primary-400 transition-colors"></i>
+                                                <i data-lucide="settings" class="w-5 h-5 cursor-pointer hover:text-primary-400 transition-colors"></i>
+                                                <i data-lucide="maximize" class="w-5 h-5 cursor-pointer hover:text-primary-400 transition-colors"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+            
+                                <!-- Video Info -->
+                                <div class="bg-white dark:bg-slate-800 rounded-2xl p-6 md:p-8 border border-gray-100 dark:border-slate-700 shadow-sm">
+                                    <h1 class="text-2xl md:text-3xl font-bold text-gray-900 dark:text-white mb-4 leading-tight">
+                                        مقدمة في تكنولوجيا التعليم الحديث
+                                    </h1>
+                                    <div class="flex flex-wrap items-center gap-4 text-sm text-gray-500 dark:text-gray-400 mb-8">
+                                        <div class="flex items-center gap-1.5 bg-gray-100 dark:bg-slate-700 px-3 py-1.5 rounded-full font-medium">
+                                            <i data-lucide="clock" class="w-4 h-4"></i>
+                                            <span>45 دقيقة</span>
+                                        </div>
+                                        <div class="flex items-center gap-1.5 bg-yellow-50 dark:bg-yellow-900/20 text-yellow-700 dark:text-yellow-400 px-3 py-1.5 rounded-full font-medium">
+                                            <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                                            <span>4.9</span>
+                                        </div>
+                                        <span class="px-3 py-1.5 rounded-full bg-primary-100 dark:bg-primary-900/30 text-primary-700 dark:text-primary-300 font-bold border border-primary-200 dark:border-primary-800">
+                                            مبتدئ
+                                        </span>
+                                    </div>
+            
+                                    <div class="flex items-center gap-3 border-t border-b border-gray-100 dark:border-slate-700 py-6 mb-8">
+                                        <button id="btn-like" class="flex items-center gap-2 px-5 py-2.5 rounded-xl bg-gray-50 dark:bg-slate-700/50 hover:bg-primary-50 dark:hover:bg-slate-700 text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 transition-all active:scale-95">
+                                            <i data-lucide="thumbs-up" class="w-5 h-5"></i>
+                                            <span class="font-bold" data-i18n="like">أعجبني</span>
+                                        </button>
+                                        <button id="btn-share" class="flex items-center gap-2 px-5 py-2.5 rounded-xl bg-gray-50 dark:bg-slate-700/50 hover:bg-primary-50 dark:hover:bg-slate-700 text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 transition-all active:scale-95">
+                                            <i data-lucide="share2" class="w-5 h-5"></i>
+                                            <span class="font-bold" data-i18n="share">مشاركة</span>
+                                        </button>
+                                        <button id="btn-save" class="flex items-center gap-2 px-5 py-2.5 rounded-xl bg-gray-50 dark:bg-slate-700/50 hover:bg-primary-50 dark:hover:bg-slate-700 text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 transition-all mr-auto active:scale-95">
+                                            <i data-lucide="bookmark" class="w-5 h-5"></i>
+                                            <span class="font-bold" data-i18n="save">حفظ</span>
+                                        </button>
+                                    </div>
+            
+                                    <div class="prose dark:prose-invert max-w-none">
+                                        <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-4 flex items-center gap-2">
+                                            <div class="p-1.5 bg-primary-100 dark:bg-primary-900/30 rounded-lg">
+                                                <i data-lucide="file-text" class="w-5 h-5 text-primary-600 dark:text-primary-400"></i>
+                                            </div>
+                                            <span data-i18n="lesson_desc">وصف الدرس</span>
+                                        </h3>
+                                        <p class="text-gray-600 dark:text-gray-300 leading-relaxed text-lg">
+                                            في هذا الفيديو، سنستعرض المفاهيم الأساسية لتكنولوجيا التعليم وكيفية استخدام الأدوات الرقمية لتحسين العملية التعليمية. سنتطرق إلى أحدث الاستراتيجيات المستخدمة في الفصول الدراسية الذكية وتأثير الذكاء الاصطناعي على مستقبل التعليم.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+            
+                            <!-- Sidebar / Up Next -->
+                            <div class="lg:col-span-1">
+                                <div class="bg-white dark:bg-slate-800 rounded-2xl border border-gray-100 dark:border-slate-700 p-6 sticky top-24 shadow-sm">
+                                    <h3 class="font-bold text-xl text-gray-900 dark:text-white mb-6 flex items-center gap-2">
+                                        <i data-lucide="list-video" class="w-5 h-5 text-secondary-500"></i>
+                                        <span data-i18n="course_content">محتوى الكورس</span>
+                                    </h3>
+                                    <div class="space-y-4">
+                                        <!-- Active Item -->
+                                        <div class="flex gap-4 group cursor-pointer bg-primary-50 dark:bg-primary-900/20 p-3 rounded-2xl border border-primary-100 dark:border-primary-800/50 transition-colors">
+                                            <div class="relative w-28 h-20 rounded-xl overflow-hidden flex-shrink-0 bg-gray-900 shadow-sm">
+                                                <img 
+                                                    src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20width='300'%20height='200'%3E%3Crect%20width='100%25'%20height='100%25'%20fill='%233b82f6'/%3E%3Ctext%20x='50%25'%20y='50%25'%20fill='%23ffffff'%20font-size='18'%20text-anchor='middle'%20dominant-baseline='middle'%3EThumbnail%3C/text%3E%3C/svg%3E"
+                                                    alt="Thumbnail"
+                                                    class="w-full h-full object-cover opacity-80"
+                                                />
+                                                <div class="absolute inset-0 flex items-center justify-center">
+                                                    <div class="flex gap-1 items-end">
+                                                        <span class="w-1 h-3 bg-white animate-[bounce_1s_infinite]"></span>
+                                                        <span class="w-1 h-5 bg-white animate-[bounce_1.2s_infinite]"></span>
+                                                        <span class="w-1 h-2 bg-white animate-[bounce_0.8s_infinite]"></span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="flex flex-col justify-center">
+                                                <h4 class="text-sm font-bold text-primary-700 dark:text-primary-300 line-clamp-2 leading-snug mb-2">مقدمة في التكنولوجيا</h4>
+                                                <span class="text-xs text-primary-600 dark:text-primary-400 font-bold bg-white dark:bg-slate-900/50 px-2 py-1 rounded-md w-fit">جاري التشغيل...</span>
+                                            </div>
+                                        </div>
+
+                                        <!-- Item 1 -->
+                                        <div class="flex gap-4 group cursor-pointer hover:bg-gray-50 dark:hover:bg-slate-700/30 p-2 rounded-2xl transition-colors">
+                                            <div class="relative w-28 h-20 rounded-xl overflow-hidden flex-shrink-0 bg-gray-200">
+                                                <img 
+                                                    src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20width='300'%20height='200'%3E%3Crect%20width='100%25'%20height='100%25'%20fill='%2390cdf4'/%3E%3Ctext%20x='50%25'%20y='50%25'%20fill='%23000000'%20font-size='18'%20text-anchor='middle'%20dominant-baseline='middle'%3ELesson%3C/text%3E%3C/svg%3E"
+                                                    alt="Thumbnail"
+                                                    class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                                                />
+                                                <div class="absolute bottom-1 right-1 bg-black/70 text-white text-[10px] font-bold px-1.5 py-0.5 rounded backdrop-blur-sm">12:30</div>
+                                                <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity bg-black/20">
+                                                    <div class="w-8 h-8 bg-white/90 rounded-full flex items-center justify-center pl-0.5 shadow-sm">
+                                                        <i data-lucide="play" class="w-4 h-4 text-black fill-current"></i>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="flex flex-col justify-center">
+                                                <h4 class="text-sm font-bold text-gray-800 dark:text-gray-200 line-clamp-2 leading-snug mb-1 group-hover:text-primary-600 dark:group-hover:text-primary-400 transition-colors">استراتيجيات التعلم النشط</h4>
+                                                <span class="text-xs text-gray-500 font-medium">الدرس الثاني</span>
+                                            </div>
+                                        </div>
+                                        
+                                        <!-- Item 2 -->
+                                        <div class="flex gap-4 group cursor-pointer hover:bg-gray-50 dark:hover:bg-slate-700/30 p-2 rounded-2xl transition-colors">
+                                            <div class="relative w-28 h-20 rounded-xl overflow-hidden flex-shrink-0 bg-gray-200">
+                                                <img 
+                                                    src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20width='300'%20height='200'%3E%3Crect%20width='100%25'%20height='100%25'%20fill='%23a78bfa'/%3E%3Ctext%20x='50%25'%20y='50%25'%20fill='%23000000'%20font-size='18'%20text-anchor='middle'%20dominant-baseline='middle'%3ELesson%3C/text%3E%3C/svg%3E"
+                                                    alt="Thumbnail"
+                                                    class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                                                />
+                                                <div class="absolute bottom-1 right-1 bg-black/70 text-white text-[10px] font-bold px-1.5 py-0.5 rounded backdrop-blur-sm">18:45</div>
+                                                <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity bg-black/20">
+                                                    <div class="w-8 h-8 bg-white/90 rounded-full flex items-center justify-center pl-0.5 shadow-sm">
+                                                        <i data-lucide="play" class="w-4 h-4 text-black fill-current"></i>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="flex flex-col justify-center">
+                                                <h4 class="text-sm font-bold text-gray-800 dark:text-gray-200 line-clamp-2 leading-snug mb-1 group-hover:text-primary-600 dark:group-hover:text-primary-400 transition-colors">تصميم المحتوى الرقمي</h4>
+                                                <span class="text-xs text-gray-500 font-medium">الدرس الثالث</span>
+                                            </div>
+                                        </div>
+                                         <!-- Item 3 -->
+                                         <div class="flex gap-4 group cursor-pointer hover:bg-gray-50 dark:hover:bg-slate-700/30 p-2 rounded-2xl transition-colors">
+                                            <div class="relative w-28 h-20 rounded-xl overflow-hidden flex-shrink-0 bg-gray-200">
+                                                <img 
+                                                    src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20width='300'%20height='200'%3E%3Crect%20width='100%25'%20height='100%25'%20fill='%23f472b6'/%3E%3Ctext%20x='50%25'%20y='50%25'%20fill='%23000000'%20font-size='18'%20text-anchor='middle'%20dominant-baseline='middle'%3ELesson%3C/text%3E%3C/svg%3E"
+                                                    alt="Thumbnail"
+                                                    class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                                                />
+                                                <div class="absolute bottom-1 right-1 bg-black/70 text-white text-[10px] font-bold px-1.5 py-0.5 rounded backdrop-blur-sm">20:10</div>
+                                                <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity bg-black/20">
+                                                    <div class="w-8 h-8 bg-white/90 rounded-full flex items-center justify-center pl-0.5 shadow-sm">
+                                                        <i data-lucide="play" class="w-4 h-4 text-black fill-current"></i>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="flex flex-col justify-center">
+                                                <h4 class="text-sm font-bold text-gray-800 dark:text-gray-200 line-clamp-2 leading-snug mb-1 group-hover:text-primary-600 dark:group-hover:text-primary-400 transition-colors">الذكاء الاصطناعي في التعليم</h4>
+                                                <span class="text-xs text-gray-500 font-medium">الدرس الرابع</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                    <button class="w-full mt-6 py-3 border border-gray-200 dark:border-slate-700 rounded-xl text-sm font-bold text-gray-600 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-slate-700 transition-colors shadow-sm hover:shadow">
+                                        <span data-i18n="show_all_lessons">عرض كل الدروس</span>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+
+            <!-- TEACHERS VIEW (Hidden by default) -->
+            <div id="teachers-view" class="hidden opacity-0 transform translate-y-4 transition-all duration-500">
+                <section class="py-12 bg-gray-50 dark:bg-slate-900 min-h-[80vh]">
+                    <div class="container mx-auto px-4">
+                        <div class="flex items-center justify-between mb-8">
+                            <h2 class="text-2xl md:text-3xl font-bold text-gray-900 dark:text-white" data-i18n="teachers_title">المعلمون</h2>
+                            <button id="btn-back-home-2" class="flex items-center gap-2 text-primary-600 dark:text-primary-400 hover:text-primary-700 font-bold transition-colors px-4 py-2 rounded-lg hover:bg-primary-50 dark:hover:bg-primary-900/20">
+                                <i data-lucide="arrow-right" class="w-5 h-5"></i>
+                                <span data-i18n="back_home">العودة للرئيسية</span>
+                            </button>
+                        </div>
+
+                        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                            <div class="bg-white dark:bg-slate-800 rounded-2xl border border-gray-100 dark:border-slate-700 p-6 shadow-sm">
+                                <div class="flex items-center gap-4 mb-4">
+                                    <div class="w-12 h-12 rounded-full bg-gradient-to-br from-gray-200 to-gray-300 dark:from-gray-700 dark:to-gray-800 flex items-center justify-center">
+                                        <i data-lucide="user" class="w-6 h-6 text-gray-600 dark:text-gray-300"></i>
+                                    </div>
+                                    <div>
+                                        <div class="font-bold text-gray-900 dark:text-white">د. فتحيه فهمي</div>
+                                        <div class="text-xs text-gray-500 dark:text-gray-400" data-i18n="teacher_role_1">أستاذ تكنولوجيا التعليم</div>
+                                    </div>
+                                </div>
+                                <p class="text-sm text-gray-600 dark:text-gray-300" data-i18n="teacher_desc_1">خبرة طويلة في تطوير المحتوى التعليمي الرقمي وتوظيف الذكاء الاصطناعي في التعليم.</p>
+                            </div>
+
+                            <div class="bg-white dark:bg-slate-800 rounded-2xl border border-gray-100 dark:border-slate-700 p-6 shadow-sm">
+                                <div class="flex items-center gap-4 mb-4">
+                                    <div class="w-12 h-12 rounded-full bg-gradient-to-br from-gray-200 to-gray-300 dark:from-gray-700 dark:to-gray-800 flex items-center justify-center">
+                                        <i data-lucide="user" class="w-6 h-6 text-gray-600 dark:text-gray-300"></i>
+                                    </div>
+                                    <div>
+                                        <div class="font-bold text-gray-900 dark:text-white">أ. محمد علي</div>
+                                        <div class="text-xs text-gray-500 dark:text-gray-400" data-i18n="teacher_role_2">مدرس تطوير ويب</div>
+                                    </div>
+                                </div>
+                                <p class="text-sm text-gray-600 dark:text-gray-300" data-i18n="teacher_desc_2">متخصص في JavaScript وReact وبناء تطبيقات تعليمية تفاعلية.</p>
+                            </div>
+
+                            <div class="bg-white dark:bg-slate-800 rounded-2xl border border-gray-100 dark:border-slate-700 p-6 shadow-sm">
+                                <div class="flex items-center gap-4 mb-4">
+                                    <div class="w-12 h-12 rounded-full bg-gradient-to-br from-gray-200 to-gray-300 dark:from-gray-700 dark:to-gray-800 flex items-center justify-center">
+                                        <i data-lucide="user" class="w-6 h-6 text-gray-600 dark:text-gray-300"></i>
+                                    </div>
+                                    <div>
+                                        <div class="font-bold text-gray-900 dark:text-white">أ. سارة حسن</div>
+                                        <div class="text-xs text-gray-500 dark:text-gray-400" data-i18n="teacher_role_3">مدرس ذكاء اصطناعي</div>
+                                    </div>
+                                </div>
+                                <p class="text-sm text-gray-600 dark:text-gray-300" data-i18n="teacher_desc_3">تطبيقات التعلم الآلي في التعليم وتصميم نماذج تفاعلية مبسطة.</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </main>
+
+        <!-- Footer -->
+        <footer class="bg-white dark:bg-slate-950 border-t border-gray-200 dark:border-slate-800 py-16 transition-colors">
+            <div class="container mx-auto px-4">
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12 items-start">
+                    <!-- Brand -->
+                    <div class="text-center md:text-right space-y-4">
+                        <div class="flex items-center gap-3 justify-center md:justify-start">
+                             <div class="bg-primary-600 p-2.5 rounded-xl shadow-lg shadow-primary-600/20">
+                                <i data-lucide="sparkles" class="text-white w-6 h-6"></i>
+                             </div>
+                             <h4 class="text-2xl font-black text-gray-900 dark:text-white tracking-tight">منصة التعليم</h4>
+                        </div>
+                        <p class="text-sm text-gray-500 dark:text-gray-400 leading-relaxed max-w-xs mx-auto md:mx-0 font-medium">
+                            منصة تعليمية متكاملة تم تطويرها كجزء من مشروع تعليمي معد ل د/فتحيه فهمي. تهدف إلى تسهيل العملية التعليمية باستخدام أحدث التقنيات.
+                        </p>
+                    </div>
+
+                    <!-- Links -->
+                    <div class="text-center md:text-right">
+                        <h4 class="font-bold text-gray-900 dark:text-white mb-6 text-lg">روابط سريعة</h4>
+                        <ul class="space-y-3 text-sm text-gray-600 dark:text-gray-400 font-medium">
+                            <li><a href="#" data-nav="home" data-i18n="nav_home" class="hover:text-primary-600 hover:translate-x-1 transition-all inline-block">الرئيسية</a></li>
+                            <li><a href="#" data-scroll="courses" data-i18n="nav_courses" class="hover:text-primary-600 hover:translate-x-1 transition-all inline-block">المسارات التعليمية</a></li>
+                            <li><a href="#" data-modal="about" data-i18n="nav_about" class="hover:text-primary-600 hover:translate-x-1 transition-all inline-block">عن الطالب</a></li>
+                            <li><a href="#" data-modal="contact" data-i18n="nav_contact" class="hover:text-primary-600 hover:translate-x-1 transition-all inline-block">اتصل بنا</a></li>
+                        </ul>
+                    </div>
+        
+                    <!-- Student Info -->
+                    <div class="text-center md:text-left bg-gray-50 dark:bg-slate-900 p-8 rounded-3xl border border-gray-100 dark:border-slate-800 relative overflow-hidden group">
+                        <div class="absolute top-0 right-0 w-20 h-20 bg-primary-500/5 rounded-full blur-2xl group-hover:bg-primary-500/10 transition-colors"></div>
+                        <p class="text-xs text-gray-400 uppercase tracking-wider mb-2 font-bold">تم التطوير بواسطة</p>
+                        <p class="text-xl font-bold text-gray-900 dark:text-white mb-1">
+                             عبد الفتاح محمود الجزار
+                        </p>
+                        <p class="text-sm text-primary-600 dark:text-primary-400 font-bold mb-2">
+                            كلية تربية نوعية
+                        </p>
+                        <div class="inline-block px-3 py-1 bg-white dark:bg-slate-800 border border-gray-200 dark:border-slate-700 rounded-lg text-xs text-gray-500 font-mono">
+                             الفرقة الرابعة
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="mt-12 pt-8 border-t border-gray-100 dark:border-slate-800 text-center flex flex-col md:flex-row justify-between items-center gap-4 text-xs font-medium text-gray-400">
+                    <div>
+                        &copy; <span id="year"></span> جميع الحقوق محفوظة.
+                    </div>
+                    <div class="flex items-center gap-6">
+                        <span class="hover:text-primary-600 cursor-pointer transition-colors">سياسة الخصوصية</span>
+                        <span class="hover:text-primary-600 cursor-pointer transition-colors">الشروط والأحكام</span>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+    
+    <div id="global-modal" class="fixed inset-0 z-[200] hidden">
+        <div id="modal-overlay" class="absolute inset-0 bg-black/50 backdrop-blur-sm"></div>
+        <div class="relative mx-auto my-24 max-w-lg bg-white dark:bg-slate-800 rounded-2xl p-6 shadow-2xl border border-gray-200 dark:border-slate-700">
+            <div class="flex items-center justify-between mb-4">
+                <h3 id="modal-title" class="text-lg font-bold"></h3>
+                <button id="modal-close" class="p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-slate-700">
+                    <i data-lucide="x" class="w-5 h-5"></i>
+                </button>
+            </div>
+            <div id="modal-body" class="text-gray-700 dark:text-gray-200"></div>
+        </div>
+    </div>
+    
+    <!-- Scripts -->
+</body>
+</html>
